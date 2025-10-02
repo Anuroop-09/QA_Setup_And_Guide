@@ -1,0 +1,25 @@
+<%- include("./partials/head.ejs", { title: data?.pageTitle, metaDescription: data?.metaDescription }) %>
+<section class="content-space">
+    <div class="categories container">
+        <% data?.categories.forEach(category => { %>
+            <div class="category" id="<%= category?.id %>">
+                <% if (category?.title) { %>
+                    <h2 class="home__h2">
+                        <img class="home__h2--logo" src="<%= category.image?.imgSrc %>" alt="<%= category.image?.imgAltText %>">
+                        <span class="home__h2--text"><%= category?.title %></span>
+                    </h2>
+                <% } %>
+                <% if (category?.listItems != 0) { %>
+                    <ul class="routes">
+                        <% category.listItems.forEach(listItem => { %>
+                            <li class="route__item">
+                                <a href="<%= listItem?.itemId %>" class="route__link"><%= listItem?.itemName %></a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+            </div>
+        <% }) %>
+    </div>
+</section>
+<%- include("./partials/foot.ejs") %>

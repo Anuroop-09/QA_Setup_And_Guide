@@ -1,0 +1,20 @@
+/* BASE */
+@import url("./base/reset.css");
+@import url("./base/typography.css");
+@import url("./base/variables.css");
+
+
+/* LAYOUT */
+@import url("./layout/header.css");
+@import url("./layout/footer.css");
+@import url("./layout/layout.css");
+
+/* COMPONENTS */
+@import url("./components/content.css");
+@import url("./components/loader.css");
+@import url("./components/section.css");
+@import url("./components/sidebar.css");
+
+/* PAGES */
+@import url("./pages/home.css");
+@import url("./pages/testng.css");

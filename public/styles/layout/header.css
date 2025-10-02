@@ -1,0 +1,26 @@
+.navbar {
+    height: 6rem;
+    font-size: 1.4rem;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1)
+}
+
+.navbar__list {
+    height: inherit;
+    list-style: none;
+    display: flex;
+    gap: 3.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__link:link,
+.navbar__link:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar__link:hover,
+.navbar__link:active {
+    color: var(--font-home-link);
+    border-bottom: 1px solid var(--font-home-link);
+}

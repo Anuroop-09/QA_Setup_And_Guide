@@ -1,0 +1,71 @@
+<%- include("./partials/head.ejs", { title: data?.pageTitle, metaDescription: data?.metaDescription }) %>
+<section class="content-space">
+    <div class="testng" id="testng">
+        <div class="sidebar">
+            <ul class="sidebar__list">
+                <% data?.sidebar.forEach(listItem => { %>
+                    <%- include("./partials/sidebar.ejs", { listItem }) %>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="sections">
+            <% data?.mainContent.forEach(section => { %>
+                <section class="section" id="<%= section?.sectionId %>">
+                    <% section?.subsections.forEach(subsections => { %>
+                        <div class="section__group">
+
+                            <% if (subsections?.title) { %>
+                                <h1 class="heading-primary"><%= subsections.title %></h1>
+                            <% } %>
+
+                            <% if (subsections?.subtitle) { %>
+                                <h2 class="heading-secondary"><%= subsections.subtitle %></h2>
+                            <% } %>
+
+                            <% if (subsections?.summary) { %>
+                                <p class="section__summary"><%- subsections.summary %></p>
+                            <% } %>
+
+                            <% if (subsections?.listItems) { %>
+                                <ul class="section__list">
+                                    <% subsections.listItems.forEach(listItem => { %>
+                                        <li class="section__item"><%- listItem %></li>
+                                    <% }) %>
+                                </ul>
+                            <% } %>
+
+                            <% if (subsections?.contents) { %>
+                                <div class="contents">
+                                    <% subsections.contents.forEach(content => { %>
+                                        <div class="content-unit">
+                                            <% if (content?.contentTitle) { %>
+                                                <h3 class="heading-tertiary"><%- content.contentTitle %></h3>
+                                            <% } %>
+                                            <% content?.blocks.forEach(block => { %>
+                                                <div class="content-unit__block">
+                                                    <p class="content-unit__text"><%- block?.text %></p>
+                                                    <% if (block.image?.imgSource) { %>
+                                                        <img class="content-unit__img" src="<%= block.image?.imgSource %>" alt="<%= block.image?.altImgText %>">
+                                                    <% } %>
+                                                    <% if (block?.code) { %>
+                                                        <div class="content-unit__code-block">
+                                                            <p class="content-unit__code-heading"><%= block?.code?.codeTitle  %></p>
+                                                            <pre class="content-unit__code"><code>
+                                                                <%= block?.code?.snippet  %>
+                                                            </code></pre>
+                                                        </div>
+                                                    <% } %>  
+                                                </div>
+                                            <% }) %>
+                                        </div>
+                                    <% }) %>
+                                </div>
+                            <% } %>
+                        </div>
+                    <% }) %>
+                </section> 
+            <% }) %>
+        </div>
+    </div>
+</section>
+<%- include("./partials/foot.ejs") %>

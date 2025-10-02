@@ -1,0 +1,37 @@
+.sections {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    padding: 1.4rem 0 1.4rem 1.4rem;
+}
+
+.section:not(:last-child) {
+    margin-bottom: 4.4rem;
+}
+
+.section__group:not(:last-child) {
+    margin-bottom: 3.6rem;
+}
+
+.section__summary {
+    line-height: 2.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.section__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-left: 2rem;
+}
+
+.section__item-link {
+    color: var(--font-home-link);
+}
+
+.section__item-code {
+    background-color: var(--bg-code-tag);
+    padding: .2rem 1rem;
+    border-radius: .5rem;
+}

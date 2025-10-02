@@ -1,0 +1,9 @@
+.layout {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 6rem 1fr 3rem;
+}
+
+.content-space {
+    height: calc(100vh - 9rem);
+}

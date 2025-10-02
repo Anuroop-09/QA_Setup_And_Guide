@@ -1,0 +1,11 @@
+Headings
+heading-primary         - 2.6rem
+heading-secondary       - 2.4rem
+heading-tertiary        - 2.2rem
+
+
+Section & Blocks
+section                 - 4.4rem
+section__group          - 3.6rem
+content-unit            - 3.0rem
+content-unit__block     - 2.4rem
