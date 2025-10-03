@@ -1,17 +1,29 @@
 import express from "express";
+import dotenv from "dotenv";
+import helmet from "helmet";
 import homeRoute from "./routes/home.js";
 import seleniumJavaRoute from "./routes/selenium.js";
 import { logger } from "./middleware/logger.js";
 import { underConstruction } from "./middleware/errorHandlers.js";
 
-const PORT = 5050;
+dotenv.config();
+
+const PORT = process.env.PORT || 5050;
 const app = express();
 
-app.set('view engine', 'ejs');
+// SECURITY HEADERS
+app.use(helmet());
+
+// VIEW ENGINE
+app.set("view engine", "ejs");
+
+// STATIC FILES
 app.use(express.static("public", {
     maxAge: "1d", // Caching files for 1 day
     etag: false
 }));
+
+// BODY PARSER
 app.use(express.urlencoded({ extended: true }));
 
 // LOGGERS
@@ -22,7 +34,7 @@ app.use((req, res, next) => {
     res.locals.title = "";
     res.locals.metaDescription = "";
     next();
-})
+});
 
 // MODULAR ROUTES
 app.use("/", homeRoute);
@@ -32,5 +44,5 @@ app.use("/", seleniumJavaRoute);
 app.use(underConstruction);
 
 app.listen(PORT, () => {
-    console.log(`Server started running on PORT: ${PORT}. \nVisit: http://localhost:${PORT}`);
+    console.log(`Server started running on PORT: ${PORT}.\nVisit: http://localhost:${PORT}`);
 });
