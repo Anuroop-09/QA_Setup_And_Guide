@@ -13,7 +13,6 @@
                 <section class="section" id="<%= section?.sectionId %>">
                     <% section?.subsections.forEach(subsections => { %>
                         <div class="section__group">
-
                             <% if (subsections?.title) { %>
                                 <h1 class="heading-primary"><%= subsections.title %></h1>
                             <% } %>
@@ -24,6 +23,20 @@
 
                             <% if (subsections?.summary) { %>
                                 <p class="section__summary"><%- subsections.summary %></p>
+                            <% } %>
+
+                            <% if (subsections?.projectRepo) { %>
+                                <div class="project-repo">
+                                    <div class="project-repo__heading">
+                                        <ion-icon class="project-repo__heading--icon" name="checkmark-outline"></ion-icon>
+                                        <span class="project-repo__heading--text">SAMPLE REPO</span>
+                                    </div>
+                                    <p class="project-repo__text"><%- subsections?.projectRepo?.text %> <strong>Author:</strong> Anuroop Pamarthi</p>
+                                    <a href="<%= subsections?.projectRepo?.gitHubUrl %>" class="project-repo__link">
+                                        <ion-icon class="project-repo__link--icon" name="logo-github"></ion-icon>
+                                        <span class="project-repo__link--text">View on Github</span>
+                                    </a>
+                                </div>
                             <% } %>
 
                             <% if (subsections?.listItems) { %>

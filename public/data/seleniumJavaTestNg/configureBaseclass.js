@@ -1,13 +1,31 @@
-export const setUpBase = {
-    sectionId: "setup_baseclass",
+export const configureBaseclass = {
+    sectionId: "configure_baseclass",
     subsections: [
         {
-            subtitle: "Setup BaseClass.java",
+            subtitle: "Configure Intializers In BaseClass",
+            summary: "Now we are all set with required project setup and dependencies. Now, lets start building the basic needs of functionalites that are required for test execution.",
             contents: [
                 {
+                    contentTitle: "Step 1: Declare Global Properties",
                     blocks: [
                         {
-                            text: "Create a method to read configuration properties file.",
+                            text: "Lets start with declaring some global properties which are common and used across entire project as well.",
+                            code: {
+                                codeTitle: "BaseClass.java",
+                                snippet: `
+                                        public class BaseClass() {
+                                            private Properties properties; // Private to the class itself
+                                            public WebDriver driver; // Public to entire project
+                                        }`
+                            }
+                        }
+                    ]
+                },
+                {
+                    contentTitle: "Step 2: Create Global Properties File Reading Utility",
+                    blocks: [
+                        {
+                            text: "Create an utility method which will be used to read properties from the Global Properties file.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `
@@ -18,15 +36,23 @@ export const setUpBase = {
                                             return properties.getProperty(keyName);
                                         }`
                             }
-                        },
+                        }
+                    ]
+                },
+                {
+                    contentTitle: "Step 3: Create Browser Initialization And Launching Application Methods",
+                    blocks:[
                         {
-                            text: "Create a method to initialize a browser instance.",
+                            text: "Lets create a method which will be reponsible for initializing the browser to run tests. Browser selection should be dynamic as we will be running tests via <strong>commnad prompt</strong>. So it should have capability to read the params from command prompt. Once the browser instance is created assign it to <strong>driver</strong>",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `
                                         public void initializeBrowser() throws IOException {
+
+                                            // READING PARAMS FROM COMMAND PROMPT
                                             String cmdBrowser = System.getProperty("BROWSER");
                                             String browserToInitialize = cmdBrowser != null ? cmdBrowser : getGlobalProperty("BROWSER");
+
                                             try {
                                                 System.out.println("Started Initializing Browser: "+browserToInitialize.toUpperCase());
                                                 if (browserToInitialize.contains("chrome")) {
@@ -51,7 +77,7 @@ export const setUpBase = {
                             }
                         },
                         {
-                            text: "Create a method to launch the application.",
+                            text: "Now create a method which will be launching the application on the initialized browser instance by reading the value from the global properties file.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `
@@ -68,7 +94,7 @@ export const setUpBase = {
                             }
                         },
                         {
-                            text: "Create BeforeClass annotation to invoke browser and launch the application. Similiarly, AfterClass annotation to close the browser.",
+                            text: "Create TestNG annotations of BeforeClass (responsible for initializing the browser and launch the application) and AfterClass (close the browser). Make sure the <strong>alwaysRun</strong> option for the annotations are set to true.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `
@@ -89,8 +115,13 @@ export const setUpBase = {
                                         }`
                             }
                         },
+                    ]
+                },
+                {
+                    contentTitle: "Step 4: Create An Utility For Taking Screenshots On Test Failure",
+                    blocks:[
                         {
-                            text: "Create a method to take screenshot of the page.",
+                            text: "Now, lets create a method which will be using to take screen shot of the page when the test run got failed at some reason.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `
@@ -103,9 +134,14 @@ export const setUpBase = {
                                             return destinationPath;
                                         }`
                             }
-                        },
+                        }
+                    ]
+                },
+                {
+                    contentTitle: "Additional Useful Methods:",
+                    blocks:[
                         {
-                            text: "<strong>Additional useful methods:</strong> Method to read and get json data and returns back to hashmap object.",
+                            text: "The following method is used to read and get json data out of a .JSON file and returns the data as a <strong>HashMap</strong> object.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `

@@ -13,6 +13,11 @@ const app = express();
 
 // SECURITY HEADERS
 app.use(helmet());
+// CSP header global
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "script-src 'self' https://unpkg.com;");
+  next();
+});
 
 // VIEW ENGINE
 app.set("view engine", "ejs");
@@ -27,7 +32,7 @@ app.use(express.static("public", {
 app.use(express.urlencoded({ extended: true }));
 
 // LOGGERS
-app.use(logger);
+// app.use(logger);
 
 // PAGE DEFAULTS
 app.use((req, res, next) => {

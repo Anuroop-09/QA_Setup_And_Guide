@@ -1,9 +1,9 @@
-export const addDependencies = {
-    sectionId: "add_dependencies",
+export const importDependencies = {
+    sectionId: "import_dependencies",
     subsections: [
         {
-            subtitle: "Add Dependencies in pom.xml",
-            summary: 'Below are required dependencies to add in <code class="content-unit__text-code">pom.xml</code> file',
+            subtitle: "Import Required Dependencies",
+            summary: "After restructuring the project we can start working with Dependencies required to the project. Below are list of dependencies that are needed to start with. The below dependencies can be found in <a href='https://mvnrepository.com/'>mvnrepository</a>.",
             listItems: [
                 '<strong>selenium-java</strong> – <a class="section__item-link" href="https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java">Click here</a>',
                 '<strong>testng</strong> – <a class="section__item-link" href="https://mvnrepository.com/artifact/org.testng/testng">Click here</a>',
@@ -17,9 +17,10 @@ export const addDependencies = {
                 {
                     blocks: [
                         {
+                            text: "The dependencies should be added in the <code class='content-unit__text-code'>pom.xml</code> file of the project. Once they are added save the file by using shortcut commnand <strong>Ctrl + S</strong>. This will start fetching and downloading the files from mvn repository and save them in <strong>.m2</strong> folder of your local system.",
                             image: {
                                 imgSource: "img/selenium_java/testng_framework/9_dependencies_pom_file.png",
-                                altImgText: "POM Dependencies"
+                                altImgText: "POM Required Dependencies"
                             }
                         }
                     ]

@@ -1,11 +1,12 @@
 export const sidebar = [
-    { title: "Getting Started", anchor: "getting_started", isActive: true },
-    { title: "Create a Maven Project", anchor: "create_project" },
-    { title: "Structure Project Folder", anchor: "structure_project" },
-    { title: "Add Dependencies in pom.xml", anchor: "add_dependencies" },
-    { title: "Setup BaseClass.java", anchor: "setup_baseclass" },
+    { title: "Introduction To Framework", anchor: "intro_to_framework", isActive: true },
+    { title: "Getting Started With Project Creation", anchor: "getting_started" },
+    { title: "Convert Project To Framework Standards", anchor: "framework_standards" },
+    { title: "Import Required Dependencies", anchor: "import_dependencies" },
+    { title: "Configure Intializers In BaseClass", anchor: "configure_baseclass" },
     { title: "Create Listeners & Reporting", anchor: "reporting" },
     { title: "Convert Project to TestNG", anchor: "convert_to_testng" },
-    { title: "Add TestNG Integration in pom.xml", anchor: "add_testng_integration" },
-    { title: "Create Profiles in pom.xml", anchor: "create_profiles" }
+    { title: "Add Maven TestNG Integration", anchor: "add_testng_integration" },
+    { title: "Create Profiles in pom.xml", anchor: "create_profiles" },
+    { title: "Running Tests Via CI/CD (Jenkins)", anchor: "" }
 ]

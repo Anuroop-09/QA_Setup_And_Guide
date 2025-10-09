@@ -3,17 +3,18 @@ export const reporting = {
     subsections: [
         {
             subtitle: "Create Listeners & Reporting",
+            summary: "By default we have a test execution report gets created in test-output folder. But the report is not having good way of representation in test execution details. So, we need to configure an external HTML reporting. For that as we already included a mvn package of <strong>avenstack</strong>. By using that package let's start configuring a HTML reporter.",
             contents: [
                 {
-                    contentTitle: "Step 1: Html Report Configuration",
+                    contentTitle: "Step 1: Create A HTML Page Configuration",
                     blocks: [
                         {
-                            text: "Create a method configure html report file.",
+                            text: "Using <strong>ExtentSparkReporter & ExtentReports</strong> class lets build a HTML report configuration. Starting with creating a reporter method by creating a new class file with name as ExtentReporterNG.java under <strong>listeners</strong>.",
                             code: {
                                 codeTitle: "ExtentReporterNG.java",
                                 snippet: `
                                         public static ExtentReports getExtentReporter() {
-                                            // Set the html report to save
+                                            // Set the HTML report to save
                                             String htmlPath = System.getProperty("user.dir")+"\\reports\\index.html";
                                             
                                             // HTML CONFIGURATION
@@ -35,43 +36,47 @@ export const reporting = {
                     ]
                 },
                 {
-                    contentTitle: "Step 2: Implement/Invoke ITestListener methods",
+                    contentTitle: "Step 2: Implement/Invoke ITestListener Methods",
                     blocks: [
                         {
-                            text: "Create a new file as Listeners.java. And implement the 'ITestListener' class to use the test related methods. <strong>Note:</strong> If ITestListener class didn't provoked to add methods do the following steps to add them. Right Click on Class file -> Click on Source -> Click on Override/Implement Methods",
+                            text: "Create a new file as Listeners.java. And implement the <strong>ITestListener</strong> class (to use the test related methods). <strong>Note:</strong> If ITestListener class didn't provoked to add methods follow the steps to add them manually. Right Click on Class file -> Click on Source -> Click on <strong>Override/Implement Methods</strong>.",
                             image: {
-                                imgSource: "img/selenium_java/testng_framework/10_override_implements_methods.png",
-                                altImgText: "Override implements"
+                                imgSource: "img/selenium_java/testng_framework/10_override_implement_methods.png",
+                                altImgText: "Added ItestListener class and invoking unimplemented methods"
                             }
                         },
                         {
-                            text: "From Override/Implements Methods popup -> Select ITestListener checkbox which will be auto selecting the below methods -> Click on OK button",
+                            text: "From Override/Implements Methods popup -> Select ITestListener checkbox which will be auto selecting the below methods -> Click on OK button.",
                             image: {
-                                imgSource: "img/selenium_java/testng_framework/11_listener_implements.png",
-                                altImgText: "Override implements"
+                                imgSource: "img/selenium_java/testng_framework/11_listener_implement_methods.png",
+                                altImgText: "Selecting ITestListener methods from the popup"
                             }
                         },
                     ]
                 },
                 {
-                    contentTitle: "Step 3: Configure listening to Test execution",
+                    contentTitle: "Step 3: Re-configure ITestListener Methods",
                     blocks: [
                         {
-                            text: "Adjust the Listener class methods by start with the following classes initialize at the top level",
+                            text: "Adjust the Listener class methods by starting with the following classes to initialize them in class level.",
                             code: {
                                 codeTitle: "Listeners.java",
                                 snippet: `
                                         public class Listeners extends BaseClass implements ITestListener {
 
                                             ExtentTest test;
+
+                                            // IMPORTING REPORTER OBJECT
                                             ExtentReports extent = ExtentReporterNG.getExtentReporter();
+
+                                            // RESPONSIBLE FOR PROVIDING UNIQUE KEY (PARALLEL EXECUTION FIX)
                                             ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
                                         }`
                             }
                         },
                         {
-                            text: "Configure 'onTestStart' method",
+                            text: "Configure <strong>onTestStart()</strong> method to start recording or listening to the test run with unique test id created (By using ThreadLocal it creates a unqiue id for the test run it starts which avoids confusion in parallel exection).",
                             code: {
                                 codeTitle: "Listeners.java",
                                 snippet: `
@@ -84,7 +89,7 @@ export const reporting = {
                             }
                         },
                         {
-                            text: "Configure 'onTestSuccess' method",
+                            text: "Configure <strong>onTestSuccess()</strong> method to set the status of the particular test as Passed.",
                             code: {
                                 codeTitle: "Listeners.java",
                                 snippet: `
@@ -96,7 +101,7 @@ export const reporting = {
                             }
                         },
                         {
-                            text: "Configure 'onTestFailure' method",
+                            text: "Configure <strong>onTestFailure()</strong> method to take screenshot of the page and mark the test execution as Failed with logs and the screen shot attached to the HTML report.",
                             code: {
                                 codeTitle: "Listeners.java",
                                 snippet: `
@@ -124,7 +129,7 @@ export const reporting = {
                             }
                         },
                         {
-                            text: "Configure 'onFinish' method",
+                            text: "Configure <strong>onFinish()</strong> method to stop recording or listening the test execution once its completed.",
                             code: {
                                 codeTitle: "Listeners.java",
                                 snippet: `
@@ -138,19 +143,19 @@ export const reporting = {
                     ]
                 },
                 {
-                    contentTitle: "Step 4: Configure IRetryAnalyzer method",
+                    contentTitle: "Step 4: Add Test Execution Retry Mechanism",
                     blocks: [
                         {
-                            text: "IRetryAnalyzer class is used to listen the test execution. So, create a RetryAnalzer.java file and extend the IRetryAnalyzer class.",
+                            text: "IRetryAnalyzer class is used to listen the test execution failures and retry the tests again to max count of retries. So, create a RetryAnalzer.java class file and extend the class with implementing <strong>IRetryAnalyzer</strong> class methods.",
                             image: {
-                                imgSource: "img/selenium_java/testng_framework/12_iretry_methods.png",
-                                altImgText: "Override implements"
+                                imgSource: "img/selenium_java/testng_framework/12_iretry_implement_methods.png",
+                                altImgText: "Add unimplemented methods of IRetryAnalyzer"
                             }
                         },
                         {
-                            text: "Configure Retry Mechanism in IRetryAnalyzer.java file",
+                            text: "Configure Retry Mechanism in RetryAnalyzer.java file to run the test again to check whether its passing or not.",
                             code: {
-                                codeTitle: "IRetryAnalyzer.java",
+                                codeTitle: "RetryAnalyzer.java",
                                 snippet: `
                                         public class RetryAnalyzer implements IRetryAnalyzer {
 
