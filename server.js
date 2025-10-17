@@ -2,7 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import homeRoute from "./routes/home.js";
-import seleniumJavaRoute from "./routes/selenium.js";
+import seleniumRoute from "./routes/selenium.js";
+import installationRoute from "./routes/installations.js";
 import { logger } from "./middleware/logger.js";
 import { underConstruction } from "./middleware/errorHandlers.js";
 
@@ -43,7 +44,8 @@ app.use((req, res, next) => {
 
 // MODULAR ROUTES
 app.use("/", homeRoute);
-app.use("/", seleniumJavaRoute);
+app.use("/", seleniumRoute);
+app.use("/", installationRoute);
 
 // ERROR HANDLING
 app.use(underConstruction);

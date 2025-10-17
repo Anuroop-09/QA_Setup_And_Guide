@@ -26,3 +26,39 @@ preTags.forEach(pre => {
     const cleaned = lines.map(line => line.slice(minIndent)).join('\n');
     pre.textContent = cleaned;
 });
+
+
+
+// const sideBarList = document.querySelector(".sidebar__list");
+// const sideBarLinks = document.querySelectorAll(".sidebar__link");
+
+// // Function to handle activation of the correct sidebar link based on the hash
+// function setActiveLink() {
+//     const currentHash = window.location.hash; // Get the current hash from the URL
+
+//     sideBarLinks.forEach(item => {
+//         // Remove the active class from all items
+//         item.classList.remove("sidebar__link--active");
+
+//         // Check if the href attribute of the link matches the current hash
+//         if (item.getAttribute("href") === currentHash) {
+//             item.classList.add("sidebar__link--active"); // Add active class to matching item
+//         }
+//     });
+// }
+
+// // Set the active link when the page loads or when the hash changes
+// window.addEventListener("load", setActiveLink);
+// window.addEventListener('hashchange', setActiveLink);
+
+// // Add event listener to sidebar list for handling clicks on the links
+// if (sideBarList) {
+//     sideBarList.addEventListener('click', (e) => {
+//         const clickedLink = e.target.closest(".sidebar__link"); // Ensure the clicked element is a link
+        
+//         if (clickedLink) {
+//             sideBarLinks.forEach(item => item.classList.remove("sidebar__link--active"));
+//             clickedLink.classList.add("sidebar__link--active");
+//         }
+//     });
+// }
