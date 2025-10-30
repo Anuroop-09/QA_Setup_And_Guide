@@ -10,14 +10,14 @@ export const categories = [
         listItems: [
             {
                 itemId: "/java_installation",
-                itemName: "Java Installation (JDK)"
+                itemName: "Java Installation"
             },
             {
                 itemId: "/maven_installation",
                 itemName: "Maven Installation"
             },
             {
-                itemId: "/eclipse_ide_installation",
+                itemId: "/eclipse_installation",
                 itemName: "Eclipse IDE Installation"
             },
             {
@@ -25,12 +25,12 @@ export const categories = [
                 itemName: "Python Installation"
             },
             {
-                itemId: "/pycharm_ide_installation",
+                itemId: "/pycharm_installation",
                 itemName: "Pycharm IDE Installation"
             },
             {
                 itemId: "/jenkins_installation",
-                itemName: "Jenkins Installation"
+                itemName: "Jenkins Installation (.war)"
             }
         ]
     },

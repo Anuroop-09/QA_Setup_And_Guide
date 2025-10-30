@@ -1,4 +1,4 @@
-#testng {
+.content-pages {
     height: 100%;
     display: grid;
     grid-template-columns: 36rem auto;
