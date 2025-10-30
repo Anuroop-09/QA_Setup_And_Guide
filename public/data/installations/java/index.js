@@ -1,17 +1,17 @@
 import { sidebar } from "./sidebar.js";
 import { downloadJdk } from "./downloadJdk.js";
 import { installJdk } from "./installJdk.js";
-import { configureEnvPath } from "./configureEnvPath.js";
-import { verifyVersion } from "./verifyVersion.js";
+import { configureJdk } from "./configureJdk.js";
+import { verifyJdkVersion } from "./verifyJdkVersion.js";
 
 export const javaInstallationData = {
-    pageTitle: "",
-    metaDescription: "",
+    pageTitle: "Installations | JDK (Java Development Kit)",
+    metaDescription: "The Java Development Kit (JDK) is a software package used to develop, compile, and run Java applications. It includes the Java Runtime Environment (JRE), compiler, and essential development tools.",
     sidebar,
     mainContent: [
         downloadJdk,
         installJdk,
-        configureEnvPath,
-        verifyVersion
+        configureJdk,
+        verifyJdkVersion
     ]
 }

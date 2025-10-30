@@ -1,6 +1,6 @@
 export const sidebar = [
-    {title: "Download JDK From Official Page", anchor: "download_jdk", isActive: true},
-    {title: "Install JDK On Your Machine", anchor: "install_jdk"},
-    {title: "Configure Environment System Variables", anchor: "setup_env_variables"},
-    {title: "Verify JDK Via Command Prompt", anchor: "verify_version"}
+    { title: "Download JDK from Official page", anchor: "download_jdk", isActive: true },
+    { title: "Install JDK on your machine", anchor: "install_jdk" },
+    { title: "Configure Environment System Variables", anchor: "configure_jdk" },
+    { title: "Verify JDK via Command Prompt", anchor: "verify_jdk" }
 ]
