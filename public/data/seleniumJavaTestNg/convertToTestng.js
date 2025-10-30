@@ -3,7 +3,7 @@ export const convertToTestng = {
     subsections: [
         {
             subtitle: "Convert Project to TestNG",
-            summary: "Now, we need to convert the Project to TestNG. So we can run all the created test files using a suite file i.e. testng.xml file. These suite files can be reconfigured according to the project needs.",
+            summary: "Now, we need to convert the Project to TestNG. So we can run all the created test files using a suite file i.e. <strong>testng.xml</strong> file. These suite files can be reconfigured according to the project needs.",
             contents: [
                 {
                     contentTitle: "Step 1: Start Creating <code>testng.xml</code> file",
@@ -18,7 +18,7 @@ export const convertToTestng = {
                     ]
                 },
                 {
-                    contentTitle: "Step 2: Review And Proceed With <code>testng.xml</code> Creation",
+                    contentTitle: "Step 2: Review and Proceed with <code>testng.xml</code> creation",
                     blocks: [
                         {
                             text: "You will get a <strong>Generate testng.xml</strong> popup displayed. Review the Test Files and Click on <strong>Next</strong> button.",
@@ -44,10 +44,10 @@ export const convertToTestng = {
                     ]
                 },
                 {
-                    contentTitle: "Step 3: Re-configure <code>testng.xml</code> file",
+                    contentTitle: "Step 3: Re-Configure <code>testng.xml</code> file",
                     blocks: [
                         {
-                            text: "As the current structure in file is basic configuration which only triggers the tests. Now we need to re-structure the <code class='content-unit__text-code'>testng.xml</code> file by including with our desired test files.",
+                            text: "As the current structure in file is basic configuration which only triggers the tests. Now we need to re-configure the <code class='content-unit__text-code'>testng.xml</code> file by including with our desired test files and listeners.",
                             image: {
                                 imgSource: "img/selenium_java/testng_framework/17_testng_xml_tests.png",
                                 altImgText: "TestNG xml tests configuration"

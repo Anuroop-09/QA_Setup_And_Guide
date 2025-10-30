@@ -2,12 +2,12 @@ export const frameworkStandards = {
     sectionId: "framework_standards",
     subsections: [
         {
-            subtitle: "Convert Project To Framework Standards",
+            subtitle: "Convert Project to Framework standards",
             contents: [
                 {
                     blocks: [
                         {
-                            text: "As per Industry Framework Standards the project structure in not having right folders. We need to re-structure the project folders with creating necessary packages resposnible to its own duties. Please check the below image for sample framework standard folders that we require to include in project.",
+                            text: "As per Industry Framework Standards the project default structure in not having right folders/packages. We need to re-structure the project folders/packages by creating necessary items which are responsible to there own duties. Please check the below image and project structure details for sample framework standard template which require to includes.",
                             image: {
                                 imgSource: "img/selenium_java/testng_framework/8_restructure_project_folders.png",
                                 altImgText: "Folder re-structure"
@@ -54,8 +54,9 @@ export const frameworkStandards = {
             ]
         },
         {
+            subtitle: "Project template structure details",
             listItems: [
-                "<strong>src/main/java/../base/</strong> – Contains <code class='section__item-code'>BaseClass.java</code> which handles setup/teardown logic",
+                "<strong>src/main/java/../base/</strong> – Contains <code class='section__item-code'>BaseClass.java</code> which handles setup/teardown logic.",
                 "<strong>src/main/java/../pages/</strong> – Page Object Model (POM) classes representing each page of the app.",
                 "<strong>src/main/java/../listeners/</strong> – Custom TestNG listeners (<code class='section__item-code'>ITestListener</code>, <code class='section__item-code'>IRetryAnalyzer</code>), e.g., for logging, screenshots on failure.",
                 "<strong>src/main/java/../utils/</strong> – Utility/helper classes like waiting.",
@@ -65,7 +66,7 @@ export const frameworkStandards = {
                 "<strong>src/main/resources/config.properties</strong> – Global configuration properties file.",
                 "<strong>project_root/reports</strong> – Extent Report html files storage.",
                 "<strong>project_root/screenshots</strong> – All failure test cases screenshots storage.",
-                "<strong>project_root/testsuites</strong> – TestNG suite files which tests to run, groups, parameters, parallel execution etc..",
+                "<strong>project_root/testsuites</strong> – TestNG suite files which tests to run, groups, parameters, parallel execution etc.",
             ],
         }
     ]

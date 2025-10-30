@@ -2,8 +2,8 @@ export const configureBaseclass = {
     sectionId: "configure_baseclass",
     subsections: [
         {
-            subtitle: "Configure Intializers In BaseClass",
-            summary: "Now we are all set with required project setup and dependencies. Now, lets start building the basic needs of functionalites that are required for test execution.",
+            subtitle: "Configure Initializers in BaseClass",
+            summary: "Now we are all set with required Industry Standard Project Template Structure and Dependencies. Now, lets start building the necessary functionalites that are required for test execution.",
             contents: [
                 {
                     contentTitle: "Step 1: Declare Global Properties",
@@ -22,7 +22,7 @@ export const configureBaseclass = {
                     ]
                 },
                 {
-                    contentTitle: "Step 2: Create Global Properties File Reading Utility",
+                    contentTitle: "Step 2: Create Global Properties file reading utility",
                     blocks: [
                         {
                             text: "Create an utility method which will be used to read properties from the Global Properties file.",
@@ -40,10 +40,10 @@ export const configureBaseclass = {
                     ]
                 },
                 {
-                    contentTitle: "Step 3: Create Browser Initialization And Launching Application Methods",
-                    blocks:[
+                    contentTitle: "Step 3: Create Browser Initialization and Launching Application methods",
+                    blocks: [
                         {
-                            text: "Lets create a method which will be reponsible for initializing the browser to run tests. Browser selection should be dynamic as we will be running tests via <strong>commnad prompt</strong>. So it should have capability to read the params from command prompt. Once the browser instance is created assign it to <strong>driver</strong>",
+                            text: "Lets create a method which will be reponsible for initializing the browser to run tests. Browser selection should be dynamic as we will be running tests via <strong>command prompt</strong>. So, it should have capability to read the params from command prompt. Once the browser instance is created assign it to <strong>driver</strong> variable.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `
@@ -118,10 +118,10 @@ export const configureBaseclass = {
                     ]
                 },
                 {
-                    contentTitle: "Step 4: Create An Utility For Taking Screenshots On Test Failure",
-                    blocks:[
+                    contentTitle: "Step 4: Create an Utility for taking Screenshots on Test failure",
+                    blocks: [
                         {
-                            text: "Now, lets create a method which will be using to take screen shot of the page when the test run got failed at some reason.",
+                            text: "Now, lets create a method which will be using to take screen shot of the page when the test run got failed at certain point of execution.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `
@@ -138,10 +138,10 @@ export const configureBaseclass = {
                     ]
                 },
                 {
-                    contentTitle: "Additional Useful Methods:",
-                    blocks:[
+                    contentTitle: "Additional useful methods:-",
+                    blocks: [
                         {
-                            text: "The following method is used to read and get json data out of a .JSON file and returns the data as a <strong>HashMap</strong> object.",
+                            text: "The following method is used to read and get json data out of a <strong>.JSON</strong> file and returns the data as a <strong>HashMap</strong> object.",
                             code: {
                                 codeTitle: "BaseClass.java",
                                 snippet: `

@@ -2,8 +2,8 @@ export const importDependencies = {
     sectionId: "import_dependencies",
     subsections: [
         {
-            subtitle: "Import Required Dependencies",
-            summary: "After restructuring the project we can start working with Dependencies required to the project. Below are list of dependencies that are needed to start with. The below dependencies can be found in <a href='https://mvnrepository.com/'>mvnrepository</a>.",
+            subtitle: "Import required dependencies",
+            summary: "After restructuring the project we can start working with importing <strong>dependencies</strong> required to the project. Below are list of dependencies that are needed to import into the project. The below dependencies can be found in <a href='https://mvnrepository.com/'>mvnrepository</a>.",
             listItems: [
                 '<strong>selenium-java</strong> – <a class="section__item-link" href="https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java">Click here</a>',
                 '<strong>testng</strong> – <a class="section__item-link" href="https://mvnrepository.com/artifact/org.testng/testng">Click here</a>',
