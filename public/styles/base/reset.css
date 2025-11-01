@@ -14,4 +14,23 @@ body {
     font-family: "Roboto", sans-serif;
     color: var(--font-color-primary);
     height: 100vh;
+    position: relative;
+}
+
+.responsive {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 2.4rem;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+}
+
+.responsive__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

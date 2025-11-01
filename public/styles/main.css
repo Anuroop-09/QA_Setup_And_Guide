@@ -19,3 +19,6 @@
 /* PAGES */
 @import url("./pages/home.css");
 @import url("./pages/content-pages.css");
+
+/* RESPONSIVE */
+@import url("./responsive.css");

@@ -1,0 +1,31 @@
+/* Large Desktop - 1400px */
+@media (max-width: 87.5em) {
+    
+}
+
+/* Desktop - 1200px */
+@media (max-width: 75em) {
+    
+}
+
+/* Landscape tabs - 992px */
+@media (max-width: 62em) {
+    .responsive {
+        display: block;
+    }
+}
+
+/* Portrait tabs - 768px */
+@media (max-width: 48em) {
+    
+}
+
+/* Mobile - 576px */
+@media (max-width: 36em) {
+    
+}
+
+/* Extra Small Mobile - <576px */
+@media (min-width: 36em) {
+    
+}
